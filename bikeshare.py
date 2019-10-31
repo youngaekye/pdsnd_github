@@ -154,16 +154,18 @@ def user_stats(df):
     print("The counts of each user type were:\n", user_types)
 
     # Display counts of gender
-    gender_counts = df['Gender'].value_counts()
-    print("The counts of each gender were:\n", gender_counts)
+    if 'Gender' in df:
+        gender_counts = df['Gender'].value_counts()
+        print("The counts of each gender were:\n", gender_counts)
 
     # Display earliest, most recent, and most common year of birth
-    earliest_birth_year = df['Birth Year'].min()
-    print("\nThe most earliest birth year was", earliest_birth_year)
-    most_recent_birth_year = df['Birth Year'].max()
-    print("The most recent birth year was", most_recent_birth_year)
-    most_common_birth_year = df['Birth Year'].mode()[0]
-    print("The most common birth year was", most_common_birth_year)
+    if 'Birth Year' in df:
+        earliest_birth_year = df['Birth Year'].min()
+        print("\nThe most earliest birth year was", earliest_birth_year)
+        most_recent_birth_year = df['Birth Year'].max()
+        print("The most recent birth year was", most_recent_birth_year)
+        most_common_birth_year = df['Birth Year'].mode()[0]
+        print("The most common birth year was", most_common_birth_year)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -171,6 +173,7 @@ def user_stats(df):
 
 def main():
     while True:
+        index = 0
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
@@ -178,6 +181,14 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        
+        # Display raw data
+        raw_data = input(‘\nWould you like to see the raw data? Enter yes or no.\n’)
+        while raw_data.lower() == 'yes':
+            print(df[index:index + 5])
+            raw_data = input(‘\nWould you like to see next five more rows of the raw data? Enter yes or no.\n’)
+            if raw_data.lower() == 'yes':
+                index = index + 5
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
