@@ -1,20 +1,15 @@
-Date created
-This project and the README file were created on 31/10/2019.
+### Date created
+Include the date you created this project and README file.
 
-Project Title
-EXPLORE US BIKESHARE DATA
+### Project Title
+Replace the Project Title
 
-Description
-Bicycle-sharing systems allow users to rent bicycles on a very short-term basis for a price.  Motivate is one of the bicycle-sharing system providers for many of the major cities in the United States such as Chicago, New York City, and Washington, DC. Using data provided by Motivate and randomly selected for the first six months of 2017 for these three large cities, this project computes a variety of descriptive statistics for them.
+### Description
+Describe what your project is about and what it does
 
-Files used
-The following three city dataset files are used:
-- chicago.csv
-- new_york_city.csv
-- washington.csv
+### Files used
+Include the files used
 
-Credits
-https://github.com/udacity/pdsnd_github
+### Credits
+It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
-With instruction from:
-- Richard Kalehoff
