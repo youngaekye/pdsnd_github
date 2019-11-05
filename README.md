@@ -1,6 +1,7 @@
 Date created:
 
 This project and the README file were initially created on 31/10/2019.
+The latest update on the README file was made on 06/11/2019.
 
 Project Title:
 
