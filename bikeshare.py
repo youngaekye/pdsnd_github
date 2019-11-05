@@ -173,7 +173,6 @@ def user_stats(df):
 
 def main():
     while True:
-        index = 0
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
@@ -181,14 +180,6 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
-        # Display raw data
-        raw_data = input(‘\nWould you like to see the raw data? Enter yes or no.\n’)
-        while raw_data.lower() == 'yes':
-            print(df[index:index + 5])
-            raw_data = input(‘\nWould you like to see next five more rows of the raw data? Enter yes or no.\n’)
-            if raw_data.lower() == 'yes':
-                index = index + 5
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
